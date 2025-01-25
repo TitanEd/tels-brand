@@ -232,6 +232,9 @@ a.course-card-title {
         &.is-invalid {
             border-color: $danger !important;
         }
+        &:focus{
+            box-shadow: 0 0 0 1px $primary;
+        }
     }
     .pgn__form-text-default, .has-floating-label {
         color: $text-color;
@@ -527,7 +530,7 @@ a.course-card-title {
             input[type=radio], input[type=checkbox] {
                 border: 1px solid #C4C7CF;
                 &:checked {
-                    border-color: #15376D;
+                    border-color: #20ad96;
                 }
             }
         }
@@ -612,6 +615,9 @@ footer.tutor-container .copyright-site {
     box-shadow: none;
     .bg-white {
         background: none !important;
+        p {
+            color: $text-color;
+        }
     }
     .pgn__action-row {
         button {
@@ -645,6 +651,10 @@ a.discussion-post {
     }
     .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text, .form-control.has-value ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-text {
         background-color: $primary-light;
+
+        &:focus{
+            box-shadow: 0 0 0 1px $primary;
+        }
     }
 }
 #paragon-portal-root .new-user-tour-dialog {
@@ -927,6 +937,12 @@ a.discussion-post {
                     &.btn-outline-primary {
                         background: none !important;
                         color: $text-color;
+                        &:not(:disabled):not(.disabled):active{
+                            color: $text-color;
+                        }
+                    }
+                    &.btn-primary:not(:disabled):not(.disabled):active {
+                        color: $btn-color;                      
                     }
                 }
             }
@@ -1292,6 +1308,9 @@ svg {
         color: $text-color;
         background: $primary-light;
         border-color: $primary-light;
+        &.text-secondary{
+            color: $text-color !important;
+        }
     }
     .btn-link {
         color: $primary !important;
@@ -1343,6 +1362,10 @@ input::placeholder {
         background: none !important;
         border: 1px solid $border-color;
         color: $text-color;
+
+        &:focus{
+            box-shadow: 0 0 0 1px $primary;
+        }
     }
 }
 .pgn__card-header-title-md {
@@ -1435,5 +1458,28 @@ div[role=heading].h2 + .list-unstyled.m-0.mt-4.pt-2 {
 section[data-testid=sidebar-NOTIFICATIONS], section[data-testid=sidebar-DISCUSSIONS] {
     &.border-light-400 {
         border-color: $primary-light !important;
+    }
+}
+
+.donut-chart-text {
+    fill: $primary-500;
+}
+
+.theme-toggle-button{
+    .light-theme-icon > span, .dark-theme-icon > span{
+        color: $text-color-primary;
+    }
+    .toggle-switch {
+        .switch {
+            /* The slider */
+            .slider {
+                background-color: #ccc;
+                box-shadow: 0 0 1px #ccc;
+                &::before{
+                    transform: translateX(19px);
+                    background-color: $text-color-primary;
+                }
+            }
+        }
     }
 }
